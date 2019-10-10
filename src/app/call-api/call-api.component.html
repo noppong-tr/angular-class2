@@ -1,0 +1,24 @@
+<p>call-api works!</p>
+
+<div>
+    <button class='btn' (click)='call()'>Call API</button>
+</div>
+
+<div *ngIf="dataReturn">
+    <p *ngFor="let data of dataReturn.data">
+        {{data}}
+    </p>
+</div>
+
+
+<div>
+    <label class="required">Username : </label>
+    <div>
+        <input type="text" [(ngModel)]="username" name="username" placeholder="username" required maxlength="25">
+    </div>
+    <label class="required">Password : </label>
+    <div class="clr-input-wrapper">
+        <input type="text" [(ngModel)]="password" name="password" placeholder="password" required maxlength="25">
+    </div>
+    <button type='submit' (click)='post_data(username, password)'>Send Data</button>
+</div>
